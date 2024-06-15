@@ -11,10 +11,10 @@ module.exports = {
                 const number = Math.floor(Math.random() * max) + 1;
                 message.channel.send(`Số random của bạn là: **${number}**`);
             } else {
-                message.channel.send('Please provide a valid positive number.');
+                message.channel.send('Vui lòng cung cấp số cần random');
             }
         } else {
-            message.channel.send('Usage: !random <max>');
+            message.channel.send('Sử dụng broll + số random');
     }
   },
 };
