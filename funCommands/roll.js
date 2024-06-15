@@ -5,15 +5,12 @@ module.exports = {
   description: 'Random',
   execute(message, args) {
 
-        let maxNumber = 99999999999999999; // Default max number
-        if (args[1]) {
-            const parsedNumber = parseInt(args[1]);
-            if (!isNaN(parsedNumber) && parsedNumber > 0) {
-                maxNumber = parsedNumber;
-            }
-        }
-
-        const randomNumber = Math.floor(Math.random() * maxNumber) + 1;
-        message.channel.send(`You rolled: ${randomNumber}`);
+        if (!args[0]) args[0] = "10";
+    if (args[0] <= 0 || isNaN(args[0])) {
+      return client.deleteMsg(message, `${client.e.error} Số không khả dụng`, 5000, "reply")
+    }
+    const random = parseInt(args[0])
+    let rd = Math.floor(Math.random() * random) + 1;
+    await message.reply('**Con số random của ${message.member} là:** __**${rd}**__ `);
   },
 };
