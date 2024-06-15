@@ -4,12 +4,17 @@ module.exports = {
   aliases: ['rd', 'roll'],
   description: 'Random',
   execute(message, args) {
-    const randomMessages = [
-      "Số random là :",
-];
-    const randomIndex = Math.floor(Math.random() * 9999999999999) +1;
-     
-    
-    message.reply(`${randomMessages} ${randomIndex} `);
+    const args = message.content.split(' ');
+
+        let maxNumber = 99999999999999999; // Default max number
+        if (args[1]) {
+            const parsedNumber = parseInt(args[1]);
+            if (!isNaN(parsedNumber) && parsedNumber > 0) {
+                maxNumber = parsedNumber;
+            }
+        }
+
+        const randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+        message.channel.send(`You rolled: ${randomNumber}`);
   },
 };
