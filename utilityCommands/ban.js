@@ -20,7 +20,7 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setColor('#FFB6C1')
             .setTitle('Người dùng đã bị cấm')
-            .setDescription(`▶️ ${user.tag} has been banned from the server by ${message.author.tag}.`)
+            .setDescription(`▶️ ${user.tag} đã bị cấm khỏi máy chủ bởi ${message.author.tag}.`)
             .setTimestamp();
 
         message.reply({ embeds: [embed] });
