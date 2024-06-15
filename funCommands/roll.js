@@ -7,6 +7,6 @@ module.exports = {
      const randomIndex = Math.floor(Math.random() * randomMessages.length);
 
     
-    message.reply(`Số roll là ${randomIndex} `);
+    message.reply(`Số random là ${randomIndex} `);
   },
 };
