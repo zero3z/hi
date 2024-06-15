@@ -7,7 +7,7 @@ module.exports = {
     const randomMessages = [
       "Số random là :",
 ];
-    const randomIndex = Math.floor(Math.random() * randomMessages.length);
+    const randomIndex = Math.floor(Math.random() * 9999999999999) +1;
      
     
     message.reply(`${randomMessages} ${randomIndex} `);
