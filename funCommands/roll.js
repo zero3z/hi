@@ -4,9 +4,12 @@ module.exports = {
   aliases: ['rd', 'roll'],
   description: 'Random',
   execute(message, args) {
-     const randomIndex = Math.floor(Math.random() * randomMessages.length);
-
+    const randomMessages = [
+      "Số random là :",
+];
+    const randomIndex = Math.floor(Math.random() * randomMessages.length);
+     
     
-    message.reply(`Số random là ${randomIndex} `);
+    message.reply(`${randomMessages} ${randomIndex} `);
   },
 };
