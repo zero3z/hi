@@ -4,7 +4,6 @@ module.exports = {
   aliases: ['rd', 'roll'],
   description: 'Random',
   execute(message, args) {
-    const args = message.content.split(' ');
 
         let maxNumber = 99999999999999999; // Default max number
         if (args[1]) {
