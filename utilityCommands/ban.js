@@ -6,20 +6,20 @@ const {
   
 module.exports = {
     name: 'ban',
-    description: 'Ban a user from the server',
+    description: 'Cấm Người Dùng Khỏi Máy Chủ',
     execute(message, args) {
         if (!message.member.permissions.has('BAN_MEMBERS')) {
-            return message.reply('❌ You do not have permission to use this command.');
+            return message.reply('Bạn không có quyền sử dụng lệnh này');
         }
         const user = message.mentions.users.first();
         if (!user) {
-            return message.reply('❌ You need to mention a user to ban.');
+            return message.reply('Bạn cần đề cập một người dùng');
         }
         const member = message.guild.members.cache.get(user.id);
         member.ban();
         const embed = new EmbedBuilder()
-            .setColor('#FF0000')
-            .setTitle('User Banned ✅')
+            .setColor('#FFB6C1')
+            .setTitle('Người dùng đã bị cấm')
             .setDescription(`▶️ ${user.tag} has been banned from the server by ${message.author.tag}.`)
             .setTimestamp();
 
