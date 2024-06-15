@@ -9,7 +9,7 @@ module.exports = {
 
             if (!isNaN(max) && max > 0) {
                 const number = Math.floor(Math.random() * max) + 1;
-                message.channel.send(`Số random của bạn là ${number}`);
+                message.channel.send(`Số random của bạn là: **${number}**`);
             } else {
                 message.channel.send('Please provide a valid positive number.');
             }
