@@ -15,6 +15,6 @@ module.exports = {
             }
         } else {
             message.channel.send('Usage: !random <max>');
-    },
+    }
   },
 };
