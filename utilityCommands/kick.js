@@ -2,17 +2,17 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     name: 'kick',
-    description: 'Kick a user from the server',
+    description: 'Đá người dùng khỏi máy chủ',
     execute(message, args) {
         // Check if the user has the necessary permissions to use the command
         if (!message.member.permissions.has('KICK_MEMBERS')) {
-            return message.reply('❌ You do not have permission to use this command.');
+            return message.reply('Bạn không có quyền sử dụng lệnh này');
         }
 
         // Check if a user was mentioned in the command
         const user = message.mentions.users.first();
         if (!user) {
-            return message.reply('❌ You need to mention a user to kick.');
+            return message.reply('Bạn cần đề cập người dùng để đá!');
         }
 
         // Kick the mentioned user
@@ -21,9 +21,9 @@ module.exports = {
 
         // Create an embed object
         const embed = new EmbedBuilder()
-            .setColor('#FF0000')
-            .setTitle('User Kicked ✅')
-            .setDescription(`▶️ ${user.tag} has been kicked from the server by ${message.author.tag}.`)
+            .setColor('#FFB6C1')
+            .setTitle('Đã Đá Người Dùng')
+            .setDescription(`▶️ ${user.tag} đã bị đá khỏi máy chủ bởi ${message.author.tag}.`)
             .setTimestamp();
 
         message.reply({ embeds: [embed] });
