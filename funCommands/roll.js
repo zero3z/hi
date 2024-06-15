@@ -4,8 +4,7 @@ module.exports = {
   aliases: ['rd', 'roll'],
   description: 'Random',
   execute(message, args) { 
-    const random = parseInt(args[0])
-    let rd = Math.floor(Math.random() * random) + 1;
-    message.channel.send('**Con số random là:** __**${rd}**__ `);
+    const number = Math.floor(Math.random() * 100) + 1;
+    message.channel.send(`Số random là: ${number}`);
   },
 };
