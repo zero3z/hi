@@ -5,7 +5,7 @@ module.exports = {
   description: 'Random',
   execute(message, args) {
 
-        if (!args[0]) args[0] = "10";
+    if (!args[0]) args[0] = "10";
     if (args[0] <= 0 || isNaN(args[0])) {
       return client.deleteMsg(message, `${client.e.error} Số không khả dụng`, 5000, "reply")
     }
